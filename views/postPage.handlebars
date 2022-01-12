@@ -1,0 +1,16 @@
+<section class="d-flex flex-column align-items-center">
+    <article class= 'postBox m-5'>
+        <div class = 'postHead d-flex justify-content-between bg-secondary p-3'>
+            <h3>{{post.title}}</h3>
+            <h5 class= 'opacity-0 id'>{{post.id}}</h5>
+            <h5>Posted by : {{post.userName}}</h5>
+        </div>
+        <p class = 'p-5 postContent'>{{post.content}}</p>
+    </article>
+    {{#each comments as |comment|}}
+    <article class = 'postBox d-flex justify-content-start'>
+        <h3>{{comment.userName}} Says:</h3>
+        <h3>{{comment.comment}}</h3>
+    </article>
+    {{/each}}
+</section>

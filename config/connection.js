@@ -1,10 +1,11 @@
 const Sequelize = require('sequelize');
+const {PORT} = require('../server')
 require('dotenv').config();
-console.log(process.env.Port,"congig 3")
+console.log(PORT,"congig 3")
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-      host: process.env.Port || "local host",
+      host: PORT,
       dialect: 'mysql',
       dialectOptions: {
         decimalNumbers: true,

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 if(process.env.PORT){
-  const Sequelize = require('sequelize');
+  const sequelize = require('sequelize');
     sequelize = new Sequelize(process.env.DATABASE_URL, {
         dialectOptions: {
           ssl: {

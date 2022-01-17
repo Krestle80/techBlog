@@ -2,15 +2,38 @@
     <article class= 'postBox m-5'>
         <div class = 'postHead d-flex justify-content-between bg-secondary p-3'>
             <h3>{{post.title}}</h3>
-            <h5 class= 'opacity-0 id'>{{post.id}}</h5>
+            <h5 class= 'opacity-0 id' id = "postId" >{{post.id}}</h5>
             <h5>Posted by : {{post.userName}}</h5>
         </div>
         <p class = 'p-5 postContent'>{{post.content}}</p>
     </article>
+    <div class ="p-3">
+        <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a comment</button>
+    </div>
     {{#each comments as |comment|}}
-    <article class = 'postBox d-flex justify-content-start'>
-        <h3>{{comment.userName}} Says:</h3>
-        <h3>{{comment.comment}}</h3>
+    <article class = 'postBox d-flex justify-content-start p-3 m-3'>
+        <h6 class = "pe-5">{{comment.userName}} Says:</h6>
+        <h6>{{comment.comment}}</h6>
     </article>
     {{/each}}
+    
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Type in your Comment here!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type = "text" id="commentBar">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="commentBtn" class="btn btn-primary">Add Comment!</button>
+      </div>
+    </div>
+  
+</div>
+</div>
 </section>
+<script src = "/js/comment.js"></script>

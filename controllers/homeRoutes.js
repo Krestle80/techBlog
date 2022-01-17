@@ -62,6 +62,7 @@ router.get('/dashBoard', async (req, res) => {
 router.get('/post/:id', async (req, res)=>{
 
     //getting the data from sequalize
+    
     const postData = await Posts.findByPk(req.params.id,);
     let id = req.params.id
     const commentData = await Comments.findAll({
@@ -71,12 +72,18 @@ router.get('/post/:id', async (req, res)=>{
 
     const post = postData.get({ plain: true });
     const comments =  commentData.map((comment) => comment.get({ plain: true }))
-    
+    if(req.session.logged_in == true){
+      res.render('postPage', {
+        post,
+        comments,
+        logged_in:true
+      })
+    }
+    else 
     res.render('postPage', {
       post,
       comments
     })
-  
 })
 // router.get('/post/:id', async (req, res) => {
 //   try {

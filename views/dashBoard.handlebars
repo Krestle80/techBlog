@@ -9,9 +9,10 @@
         </div>
         {{#each posts as |post|}}
         <div class=" d-flex justify-content-between m-3 pastPost align-items-center">
-            <h5 class= 'postContent m-2'> {{post.title}}</h5>
-            <button type="button" class="btn btn-light m-2">Edit this post</button>
+            <h5 class= 'postContent m-2' id= {{post.id}} > {{post.title}}</h5>
+            <button type="button" class="btn btn-light m-2 editBtn" id= {{post.id}} data-bs-toggle="modal" data-bs-target="#postModal" data-title= "{{post.title}}" data-content = "{{post.content}}">Edit this post</button>
         </div>
+        
         {{/each}}
         <div class = 'd-flex flex-column align-items-center justify-content-center m-3'>
             <input type='text' id='title'>
@@ -20,4 +21,26 @@
         </div>
     </article>
 </section>
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="" >Edit your Post</h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-end">
+          <h6>Title</h6>
+        <input type="text" value="" id="postTitle" />
+      </div>
+      <div class="modal-body d-flex justify-content-end">
+          <h6>Content</h6>
+        <input type="text" value="" id="postContent" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="editPostBtn" class="btn btn-primary" data-postId=''>Edit Post!</button>
+      </div>
+    </div>
+</div>
 <script src='./js/dashBoard.js'></script>

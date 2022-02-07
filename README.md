@@ -1,5 +1,6 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 # Tech Blog
+![TechBlog](./techBlogPic.png)
 ## Description
 This is a blog for chatting about coding topics. Users can create an account, and then post or comment on others posts . For the front end it servers up Handlebars files using express.js, and stores user data using Sequelize.
 ## Table of Contents

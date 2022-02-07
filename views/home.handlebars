@@ -1,11 +1,11 @@
 
-<section class="d-flex flex-column align-items-center">
+<section class="d-flex flex-column align-items-center w-100">
   <div class= 'head bg-secondary m-5 d-flex flex-column align-items-center'>
     <h1 class="opacity-75 p-3  ">Home</h1>
   </div>
-  <div class= 'postHolder'>
+  <div class= 'postHolder w-75'>
     {{#each posts as |post|}}
-      <article class= 'postBox m-5'>
+      <article class= 'postBox m-5 w-100'>
         <div class = 'postHead d-flex justify-content-between bg-secondary p-3'>
             <h3 data-id = {{post.id}} class = 'postTitle'>{{post.title}}</h3>
             <h5>Posted by : {{post.userName}}</h5>

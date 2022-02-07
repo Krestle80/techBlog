@@ -1,23 +1,26 @@
-<section class="d-flex flex-column align-items-center">
+<section class="d-flex flex-column align-items-center w-100">
     <div class= 'head bg-secondary m-5 d-flex flex-column align-items-center'>
         <h1 class="opacity-75 p-3  ">Dashboard</h1>
     </div>
 
-    <article class= 'postBox m-5'>
-        <div class = 'postHead d-flex justify-content-center bg-secondary p-3'>
+    <article class= 'postBox m-5 '>
+        <div class = 'postHead d-flex justify-content-center bg-secondary p-3 w-100'>
             <h3>Your Posts:</h3>
         </div>
         {{#each posts as |post|}}
-        <div class=" d-flex justify-content-between m-3 pastPost align-items-center">
+        <div class=" d-flex justify-content-between m-3 pastPost align-items-center ">
             <h5 class= 'postContent m-2' id= {{post.id}} > {{post.title}}</h5>
-            <button type="button" class="btn btn-light m-2 editBtn" id= {{post.id}} data-bs-toggle="modal" data-bs-target="#postModal" data-title= "{{post.title}}" data-content = "{{post.content}}">Edit this post</button>
+            <button type="button" class="btn button m-2 editBtn" id= {{post.id}} data-bs-toggle="modal" data-bs-target="#postModal" data-title= "{{post.title}}" data-content = "{{post.content}}">Edit this post</button>
         </div>
         
         {{/each}}
         <div class = 'd-flex flex-column align-items-center justify-content-center m-3'>
-            <input type='text' id='title'>
-            <input type = 'text' id='content'>
-            <button class= 'btn' id='postBtn'>Add Post</button>
+          <h3>Add a new post here</h3>
+          <h6>Post Title</h6>
+            <input type='text' id='title' class="w-100 mx-5 my-1">
+            <h6>Post Content</h6>
+            <input type = 'text' id='content' class="w-100 mx-5 my-1">
+            <button class= 'btn button' id='postBtn'>Add Post</button>
         </div>
     </article>
 </section>
